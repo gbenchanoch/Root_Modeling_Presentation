@@ -1,0 +1,534 @@
+body{
+	background:url("images/altbg.jpg");
+	background-size:cover;
+	color:black;
+	text-shadow: none;
+	font-family:"Georgia";
+	margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  width: 100%;
+  height: 100%;
+  font-size: 24pt;
+  font-weight:bold;
+}
+
+div.toolbar {
+  position: fixed; z-index: 200;
+  top: auto; bottom: 0; left: 0; right: 0;
+  height: 1.2em; 
+  text-align: right;
+  padding-left: 1em;
+  padding-right: 1em; 
+  font-size: 60%;
+  background-color:rgb(0,0,0);
+  background-color:rgba(0,0,0,0.6);
+  color: black;
+  border-top: solid 2px black;
+}
+
+div.toolbar span.copyright {
+  color: black;
+  margin-left: 1em;
+}
+
+div.initial_prompt {
+  position: absolute;
+  z-index: 1000;
+  bottom: 1.2em;
+  width: 100%;
+  color:black;
+  background-color: rgb(200,200,200);
+  background-color: rgba(200,200,200, 0.35);
+  cursor: pointer;
+  text-shadow: none;
+}
+
+div.initial_prompt p.help {
+  text-align: center;
+}
+
+div.initial_prompt p.close {
+  text-align: right;
+  font-style: italic;
+}
+
+div.slidy_toc {
+  position: absolute;
+  z-index: 300;
+  width: 60%;
+  max-width: 30em;
+  height: 30em;
+  overflow: auto;
+  top: auto;
+  right: auto;
+  left: 4em;
+  bottom: 4em;
+  padding: 1em;
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255,0.5);
+  border-style: solid;
+  border-width: 2px;
+  border-radius:5px;
+  font-size: 60%;
+  color:black;
+}
+
+div.slidy_toc .toc_heading {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 1em;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  border-bottom-width: 1px;
+}
+
+div.slide {
+  z-index: 20;
+  margin: 0 0 0 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-width: 0;
+  clear: both;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 120%;
+  background-color: transparent;
+  overflow:hidden;
+  -webkit-animation: fadein 0.7s ease-in;
+         -moz-animation: fadein 0.7s ease-in;
+              animation: fadein 0.7s ease-in;
+}
+
+div.background {
+  display: none;
+}
+
+div.handout {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+div.slide.titlepage {
+  text-align: center;
+    -webkit-animation: none;
+         -moz-animation: none;
+              animation: none;
+}
+
+div.slide.titlepage h1 {
+  width:100%;
+  padding-top: 50px;
+  padding-bottom:50px;
+  margin-right: 0;
+  margin-top:130px;
+  border-top:solid;
+  border-top-width:2px;
+  border-bottom:solid;
+  border-bottom-width:2px;
+  border-color:black;
+}
+
+div.slide h1 {
+  background-color:rgb(0,0,0);
+  background-color:rgba(0,0,0,0.5);
+  text-align:center;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0.5em;
+  border-bottom:solid;
+  border-bottom-width:2px;
+  border-bottom-color:black;
+  font-size: 160%;
+  line-height: 1.2em;
+}
+
+@media screen and (max-device-width: 1024px)
+{
+  div.slide { font-size: 100%; }
+}
+
+@media screen and (max-device-width: 800px)
+{
+  div.slide { font-size: 200%; }
+  div.slidy_toc {
+    top: 1em;
+    left: 1em;
+    right: auto;
+    width: 80%;
+    font-size: 180%;
+  }
+}
+
+div.toc-heading {
+  width: 100%;
+  border-bottom: solid 1px rgb(180,180,180);
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+img {
+  image-rendering: optimize-quality;
+  border:solid;
+  border-color:black;
+  border-width:5px;
+  border-radius:5px;
+}
+
+video {
+  border:solid;
+  border-color:black;
+  border-width:5px;
+  border-radius:5px;
+}
+
+pre {
+ font-size: 80%;
+ font-weight: bold;
+ line-height: 120%;
+ padding-top: 0.2em;
+ padding-bottom: 0.2em;
+ padding-left: 1em;
+ padding-right: 1em;
+ border-style: solid;
+ border-left-width: 1em;
+ border-top-width: thin;
+ border-right-width: thin;
+ border-bottom-width: thin;
+ border-color: #95ABD0;
+ color: #00428C;
+ background-color: #E4E5E7;
+}
+
+li pre { margin-left: 0; }
+
+blockquote { font-style: italic }
+
+img { 
+  background-color: transparent
+}
+
+p.copyright { font-size: smaller }
+
+.center { text-align: center }
+.footnote { font-size: smaller; margin-left: 2em; }
+
+a img { border-width: 0; border-style: none }
+
+a:visited { color: black }
+a:link { color: black }
+a:hover { color: rgb(153,229,255); text-decoration: underline }
+a:active { color: rgb(153,229,255); text-decoration: underline }
+
+a {text-decoration: none}
+.toolbar a:link {color: black}
+.toolbar a:visited {color: black}
+.toolbar a:active {color: rgb(153,229,255)}
+.toolbar a:hover {color: rgb(153,229,255)}
+
+ul { list-style-type: square; }
+ul ul { list-style-type: disc; }
+ul ul ul { list-style-type: circle; }
+ul ul ul ul { list-style-type: disc; }
+li { margin-left: 0.5em; margin-top: 0.5em; }
+li li { font-size: 85%; font-style: normal; }
+li li li { font-size: 85%; font-style: normal; }
+
+div dt
+{
+  margin-left: 0;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+div dd
+{
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+}
+
+
+p,pre,ul,ol,blockquote,h2,h3,h4,h5,h6,dl,table {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+p.subhead { font-weight: bold; margin-top: 2em; }
+
+.smaller { font-size: smaller }
+.bigger { font-size: 130% }
+
+td,th { padding: 0.2em }
+
+ul {
+  margin: 0.5em 1.5em 0.5em 1.5em;
+  padding: 0;
+}
+
+ol {
+  margin: 0.5em 1.5em 0.5em 1.5em;
+  padding: 0;
+}
+
+ul { list-style-type: square; font-style: normal;}
+ul ul { list-style-type: disc; font-style: normal;}
+ul ul ul { list-style-type: circle; font-style: normal;}
+ul ul ul ul { list-style-type: disc; font-style: normal;}
+
+ul li { 
+  list-style: square;
+  font-style: normal;
+  margin: 0.1em 0em 0.6em 0;
+  padding: 0 0 0 0;
+  line-height: 140%;
+}
+
+li ul li { 
+  font-size: 85%; 
+  font-style: normal;
+  list-style-type: disc;
+  background: transparent;
+  padding: 0 0 0 0;
+}
+li li ul li { 
+  font-size: 85%; 
+  font-style: normal;
+  list-style-type: circle;
+  background: transparent;
+  padding: 0 0 0 0;
+}
+li li li ul li {
+  font-style: normal;
+  list-style-type: disc;
+  background: transparent;
+  padding: 0 0 0 0;
+}
+
+ol li { 
+  font-style: normal;
+  margin: 0.1em 0em 0.6em 1.5em;
+  padding: 0 0 0 0px;
+  line-height: 140%;
+  list-style-type: upper-roman;
+}
+
+li ol li {
+  font-style: normal;
+  list-style-type: lower-roman;
+}
+
+
+li li ol li {
+  font-style: normal;
+  list-style-type: lower-alpha;
+}
+
+/*
+ setting class="outline on ol or ul makes it behave as an
+ ouline list where blocklevel content in li elements is
+ hidden by default and can be expanded or collapsed with
+ mouse click. Set class="expand" on li to override default
+*/
+
+ol.outline li:hover { cursor: pointer }
+ol.outline li.nofold:hover { cursor: default }
+
+ul.outline li:hover { cursor: pointer }
+ul.outline li.nofold:hover { cursor: default }
+
+ol.outline { list-style:decimal;}
+ol.outline ol { list-style-type:lower-alpha }
+
+
+/* for slides with class "title" in table of contents */
+a.titleslide { font-weight: bold; font-style: normal }
+
+/*
+ hide images for work around for save as bug
+ where browsers fail to save images used by CSS
+*/
+img.hidden { display: none; visibility: hidden }
+div.initial_prompt { display: none; visibility: hidden }
+
+  div.slide {
+     visibility: visible;
+     position: inherit;
+  }
+  div.handout {
+     border-top-style: solid;
+     border-top-width: thin;
+     border-top-color: black;
+  }
+
+@media screen {
+  .hidden { display: none; visibility: visible }
+
+  div.slide.hidden { display: block; visibility: visible }
+  div.handout.hidden { display: block; visibility: visible }
+  div.background { display: none; visibility: hidden }
+  body.single_slide div.initial_prompt { display: block; visibility: visible }
+  body.single_slide div.background { display: block; visibility: visible }
+  body.single_slide div.background.hidden { display: none; visibility: hidden }
+  body.single_slide .invisible { visibility: hidden }
+  body.single_slide .hidden { display: none; visibility: hidden }
+  body.single_slide div.slide { position: absolute }
+  body.single_slide div.handout { display: none; visibility: hidden }
+}
+
+@media print {
+  .hidden { display: block; visibility: visible }
+
+  div.slide pre { font-size: 60%; padding-left: 0.5em; }
+  div.toolbar { display: none; visibility: hidden; }
+  div.slidy_toc { display: none; visibility: hidden; }
+  div.background { display: none; visibility: hidden; }
+  div.slide { page-break-before: always }
+  /* :first-child isn't reliable for print media */
+  div.slide.first-slide { page-break-before: avoid }
+}
+
+.floatleft {
+  clear:left;
+  float:left;
+  margin-left:30px;
+  margin-right:70px;
+}
+
+.floatright {
+  margin-left:70px;
+  margin-right:30px;
+  clear:right; 
+  float:right;
+}
+
+.caption {
+  font-size:10pt;
+  line-height:145%;
+  color:white;
+  text-align:left;
+  margin:0 0 0 0;
+  padding:0 0 0 5px;
+  background-color:rgb(0,0,0);
+  border:solid;
+  border-color:black;
+  border-width:3px;
+  border-radius:5px;
+}
+
+@-webkit-keyframes fadein {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadein {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+div.vbox {
+  float: left;
+  height: 40%; width: 50%;
+  margin-top: -220px;
+  background: transparent;
+}
+div.hbox {
+  width:60%;  margin-top: 0;
+  margin-left:auto; margin-right:auto;
+  height: 60%;
+  border:1px solid silver;
+  background: transparent;
+  overflow:auto;
+  text-align:left;
+  clear:both;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 30px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Modal Content (Image) */
+.modalcontent {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 900px;
+    -webkit-animation: zoom 0.7s ease-in;
+         -moz-animation: zoom 0.7s ease-in;
+              animation: zoom 0.7s ease-in;
+}
+
+.modalcaption {
+    font-family:"Georgia";
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+    height: 80px;
+    -webkit-animation: zoom 0.7s ease-in;
+         -moz-animation: zoom 0.7s ease-in;
+              animation: zoom 0.7s ease-in;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+ 
+ 
